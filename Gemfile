@@ -40,6 +40,16 @@ gem 'devise'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :development, :test do
+  gem 'debugger'
+  gem 'factory_girl_rails'
+  gem 'spring-commands-rspec'
+  gem 'rspec-rails', '~> 3.0.0'
+  gem 'guard-rspec'
+end
 
+group :test do
+  gem 'faker'
+  gem 'minitest'
+  gem 'shoulda-matchers'
+end

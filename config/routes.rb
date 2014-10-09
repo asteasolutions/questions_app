@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   devise_for :users, skip: [:confirmations]
 
+  resources :questions, only: [:show, :index, :create]
+
   # You can have the root of your site routed with "root"
   root 'home#index'
 
