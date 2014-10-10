@@ -8,7 +8,7 @@ describe QuestionsController do
   end
 
   describe "GET #index" do
-    it "populates an array of contacts" do
+    it "populates an array of questions" do
       question = create(:question)
       get :index, format: :json
       expect( assigns(:questions) ).to eq([question])
@@ -21,7 +21,7 @@ describe QuestionsController do
   end
 
   describe "GET #show" do
-    it "assigns the requested contact to @contact" do
+    it "assigns the requested question to @question" do
       question = create(:question)
       get :show, id: question.id, format: :json
       expect( assigns(:question) ).to eq(question)

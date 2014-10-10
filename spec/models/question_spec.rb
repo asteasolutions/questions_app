@@ -14,7 +14,6 @@ describe Question do
     expect( build(:question, user: nil) ).to validate_presence_of :user
   end
 
-
 end
 
 
