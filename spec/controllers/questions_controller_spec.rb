@@ -35,7 +35,7 @@ describe QuestionsController do
 
   describe "POST #create" do
     context "with valid attributes" do
-      it "saves the new contact in the database" do
+      it "saves the new question in the database" do
         question = create(:question)
         expect{post :create, question: {text: question.text, user_id: question.user.id}, format: :json}
         .to change(Question, :count).by(1)
@@ -49,7 +49,7 @@ describe QuestionsController do
     end
 
     context "with invalid attributes" do
-      it "does not save the new contact in the database" do
+      it "does not save the new question in the database" do
         expect{ post :create, question: attributes_for(:invalid_question), format: :json }
         .to_not change(Question,:count)
       end

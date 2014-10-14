@@ -2,11 +2,21 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  devise_for :users, skip: [:confirmations]
+  current_api_routes = lambda do
+    devise_for :users, skip: [:confirmations]
 
-  resources :questions, only: [:show, :index, :create] do
-    resources :answers, only: [:show, :index, :create]
+    resources :questions, only: [:show, :index, :create] do
+      resources :answers, only: [:show, :index, :create]
+    end
   end
+
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1, &current_api_routes
+
+    # match ":api/*path", :to => redirect("/api/v1/%{path}")
+  end
+
+  current_api_routes.call()
 
   # You can have the root of your site routed with "root"
   root 'home#index'

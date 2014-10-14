@@ -27,6 +27,12 @@ RSpec.configure do |config|
 
   config.include FactoryGirl::Syntax::Methods
   config.include Devise::TestHelpers, type: :controller
+  config.include JSON::SchemaMatchers
+
+  config.json_schemas[:answer_schema] = 'spec/support/schemas/v1/answer.json'
+  config.json_schemas[:answers_schema] = 'spec/support/schemas/v1/answers.json'
+  config.json_schemas[:question_schema] = 'spec/support/schemas/v1/question.json'
+  config.json_schemas[:questions_schema] = 'spec/support/schemas/v1/questions.json'
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false

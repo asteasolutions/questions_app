@@ -52,4 +52,5 @@ group :test do
   gem 'faker'
   gem 'minitest'
   gem 'shoulda-matchers'
+  gem 'json-schema-rspec'
 end

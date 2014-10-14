@@ -1,1 +1,1 @@
-json.partial! 'questions/question', collection: @questions, as: :question
+json.partial! 'question', collection: @questions, as: :question

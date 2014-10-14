@@ -1,1 +1,1 @@
-json.partial! 'answers/answer', collection: @answers, as: :answer
+json.partial! 'answer', collection: @answers, as: :answer

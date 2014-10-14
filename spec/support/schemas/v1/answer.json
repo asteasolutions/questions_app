@@ -1,0 +1,18 @@
+{
+  "type": "object",
+  "required": [
+    "id",
+    "text",
+    "updated_at",
+    "user_id",
+    "question_id"
+  ],
+  "properties": {
+    "id" : { "type" : "integer" },
+    "text" : { "type" : "string" },
+    "updated_at" : { "type" : "string", "format": "date-time" },
+    "user_id": { "type" : "integer" },
+    "question_id": { "type" : "integer" }
+  }
+}
+
